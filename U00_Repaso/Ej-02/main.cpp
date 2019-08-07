@@ -2,9 +2,9 @@
 #include "Calculadora.h"
 
 int main() {
-    Calculadora<int, int> miCalc;
+    Calculadora<int, float> miCalc;
 
-    std::cout << miCalc.divi(8,4) << std::endl;
+    std::cout << miCalc.divi(9,4) << std::endl;
     std::cout << "Ejercicio 00/02\n" << std::endl;
     return 0;
 }
