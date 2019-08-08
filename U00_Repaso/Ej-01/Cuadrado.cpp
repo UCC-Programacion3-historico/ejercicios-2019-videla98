@@ -15,5 +15,5 @@ void Cuadrado::getDiagonal() {
 }
 
 void Cuadrado::queSoy() {
-    std::cout << "Soy un Cuadrado C=" << std::endl;
+    std::cout << "Soy un Cuadrado" << std::endl;
 }

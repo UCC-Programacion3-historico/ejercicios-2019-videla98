@@ -15,5 +15,5 @@ void Circulo::getPerimetro() {
 }
 
 void Circulo::queSoy() {
-    std::cout << "Soy un Circulo :D" << std::endl;
+    std::cout << "Soy un Circulo" << std::endl;
 }

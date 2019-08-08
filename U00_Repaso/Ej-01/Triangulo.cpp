@@ -14,5 +14,5 @@ void Triangulo::getSuperficie() {
 }
 
 void Triangulo::queSoy() {
-    std::cout << "Soy un Triangulo xP" << std::endl;
+    std::cout << "Soy un Triangulo" << std::endl;
 }
