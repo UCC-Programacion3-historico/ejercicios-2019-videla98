@@ -11,4 +11,3 @@ Geometria::Geometria(float xLado, int xColor) {
     ancho = alto;
     color.tenirColor(xColor);
 }
-

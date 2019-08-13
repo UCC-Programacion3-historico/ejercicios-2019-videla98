@@ -10,6 +10,8 @@ public:
     T multi(T a, T b);
 };
 
+//La implementación de un template se hace en el mismo header.
+
 template<class T, class P>
 T Calculadora<T, P>::suma(T a, T b){
     return a + b;
@@ -22,7 +24,7 @@ T Calculadora<T, P>::resta(T a, T b) {
 
 template<class T, class P>
 P Calculadora<T, P>::divi(T a, T b) {
-    return (P)a / b;
+    return (P)(a / b);
 }
 
 template<class T, class P>
