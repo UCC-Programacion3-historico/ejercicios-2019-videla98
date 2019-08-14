@@ -12,14 +12,13 @@ int main() {
         array[i] = i;
     }
 
-
     double end = clock();
 
     double elapsed_secs = double(end - begin) / CLOCKS_PER_SEC;
 
     std::cout << "Tardo elapsed_secs" << elapsed_secs << "\n" << std::endl;
 
-    //creo que está bien pero devuleve 0 porque es muy rapido xd
+    //creo que está bien pero devuleve 0 porque es muy rapido
     for(int i=0; i<=1023; i++){
         std::cout << array[i] << std::endl;
     }
