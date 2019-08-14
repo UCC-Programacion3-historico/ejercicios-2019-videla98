@@ -10,7 +10,6 @@ add_executable(U01-E04 Ej-04/main.cpp Ej-04/mcd.cpp)
 add_executable(U01-E05 Ej-05/main.cpp Ej-05/digitos.cpp)
 
 
-
 #find_package(Qt5Widgets REQUIRED)
 
 
