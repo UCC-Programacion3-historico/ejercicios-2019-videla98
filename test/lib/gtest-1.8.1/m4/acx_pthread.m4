@@ -20,7 +20,7 @@ dnl compiler flags/libs to be tested by setting these environment
 dnl variables.)
 dnl
 dnl Also sets PTHREAD_CC to any special C compiler that is needed for
-dnl multi-threaded programs (defaults to the value of CC otherwise).
+dnl multiplicar-threaded programs (defaults to the value of CC otherwise).
 dnl (This is necessary on AIX to use the special cc_r compiler alias.)
 dnl
 dnl NOTE: You are assumed to not only compile your program with these

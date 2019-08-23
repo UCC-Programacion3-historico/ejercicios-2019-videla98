@@ -2,16 +2,16 @@
 #include <iostream>
 #include <cmath>
 
-void Circulo::getRadio() {
-    std::cout << "Radio: " << radio << "um" << std::endl;
+float Circulo::getRadio() {
+    return radio;
 }
 
-void Circulo::getSuperficie() {
-    std::cout << "Superficie: " << M_PI * radio*radio << "um^2" << std::endl;
+float Circulo::getSuperficie() {
+    return M_PI * radio*radio;
 }
 
-void Circulo::getPerimetro() {
-    std::cout << "Perimetro: " << 2 * M_PI * radio << "um" << std::endl;
+float Circulo::getPerimetro() {
+    return 2 * M_PI * radio;
 }
 
 void Circulo::queSoy() {

@@ -1713,7 +1713,7 @@ extern "C" inline void* ThreadFuncWithCLinkage(void* thread) {
   return NULL;
 }
 
-// Helper class for testing Google Test's multi-threading constructs.
+// Helper class for testing Google Test's multiplicar-threading constructs.
 // To use it, write:
 //
 //   void ThreadFunc(int param) { /* Do things with param */ }
@@ -1915,7 +1915,7 @@ class GTEST_API_ ThreadWithParamBase {
   AutoHandle thread_;
 };
 
-// Helper class for testing Google Test's multi-threading constructs.
+// Helper class for testing Google Test's multiplicar-threading constructs.
 template <typename T>
 class ThreadWithParam : public ThreadWithParamBase {
  public:

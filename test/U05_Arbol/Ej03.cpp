@@ -1,5 +1,5 @@
 #include "gtest/gtest.h"
-#include "../../U05_Hash/HashMap/HashMap.h"
+#include "../../U05_Arbol/Arbol/ArbolBinario.h"
 
 
 TEST(U05_Ej03_test, test) {

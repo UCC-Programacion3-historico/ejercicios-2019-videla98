@@ -2,16 +2,16 @@
 #include <math.h>
 #include <iostream>
 
-void Cuadrado::getPerimetro() {
-    std::cout << "Perimetro: " << alto*2 + ancho*2 << "um" << std::endl;
+float Cuadrado::getPerimetro() {
+    return alto*2 + ancho*2;
 }
 
-void Cuadrado::getSuperficie() {
-    std::cout << "Superficie: " << alto * ancho << "um^2" << std::endl;
+float Cuadrado::getSuperficie() {
+    return alto * ancho;
 }
 
-void Cuadrado::getDiagonal() {
-    std::cout << "Diagonal: " << sqrt(ancho*ancho + alto*alto) << "um" << std::endl;
+float Cuadrado::getDiagonal() {
+    return sqrt(ancho*ancho + alto*alto);
 }
 
 void Cuadrado::queSoy() {

@@ -5,9 +5,9 @@
 class Cuadrado:public Geometria{
 public:
     Cuadrado(float xAlto, float xAncho, int xColor):Geometria(xAlto, xAncho,xColor){};
-    void getDiagonal();
-    void getSuperficie();
-    void getPerimetro();
+    float getDiagonal();
+    float getSuperficie();
+    float getPerimetro();
     void queSoy();
 };
 

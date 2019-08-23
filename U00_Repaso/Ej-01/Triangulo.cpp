@@ -1,16 +1,16 @@
 #include "Triangulo.h"
 #include <iostream>
 
-void Triangulo::getAngulo() {
-    std::cout << "Angulo: " << angulo << "°" << std::endl;
+float Triangulo::getAngulo() {
+    return angulo;
 }
 
-void Triangulo::getPerimetro() {
-    std::cout << "Perimetro: " << "como saco el perimetro con tan pocos datos" << "um^2" << std::endl;
+float Triangulo::getPerimetro() {
+    return ancho*3;   //valor aleatorio porque no sé cómo sacar el perímetro con los datos que tengo
 }
 
-void Triangulo::getSuperficie() {
-    std::cout << "Superficie: " << (alto*ancho) / 2 << "um^2" << std::endl;
+float Triangulo::getSuperficie() {
+    return alto*ancho;
 }
 
 void Triangulo::queSoy() {

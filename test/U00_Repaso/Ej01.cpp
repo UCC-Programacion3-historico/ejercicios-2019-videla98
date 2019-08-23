@@ -9,9 +9,9 @@
 int PORTA;
 class subClass : public Geometria {
 public:
-    virtual void getPerimetro() { return 1; }
+    virtual float getPerimetro() { return 1; }
 
-    virtual void getSuperficie() { return 2; }
+    virtual float getSuperficie() { return 2; }
 };
 
 TEST(U00_Ej01_test, getPerimetroEsVirtual) {

@@ -1,5 +1,11 @@
 #include "Geometria.h"
 
+Geometria::Geometria() {
+    alto = 0;
+    ancho = 0;
+    color.tenirColor(0);
+}
+
 Geometria::Geometria(float xAlto, float xAncho, int xColor) {
     alto = xAlto;
     ancho = xAncho;

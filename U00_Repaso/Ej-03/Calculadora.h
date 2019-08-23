@@ -6,9 +6,9 @@ template<class T, class P>
 class Calculadora {
 public:
     T suma(T a,T b);
-    T resta(T a, T b);
-    P divi(T a, T b);
-    T multi(T a, T b);
+    T restar(T a, T b);
+    P dividir(T a, T b);
+    T multiplicar(T a, T b);
 };
 
 //La implementación de un template se hace en el mismo header.
@@ -19,17 +19,17 @@ T Calculadora<T, P>::suma(T a, T b){
 }
 
 template<class T, class P>
-T Calculadora<T, P>::resta(T a, T b) {
+T Calculadora<T, P>::restar(T a, T b) {
     return a - b;
 }
 
 template<class T, class P>
-P Calculadora<T, P>::divi(T a, T b) {
+P Calculadora<T, P>::dividir(T a, T b) {
     return (P)(a / b);
 }
 
 template<class T, class P>
-T Calculadora<T, P>::multi(T a, T b) {
+T Calculadora<T, P>::multiplicar(T a, T b) {
     return a * b;
 }
 

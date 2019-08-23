@@ -1122,7 +1122,7 @@ struct RelationToSourceCopy {};
 // support Element being a raw type (i.e. having no top-level const or
 // reference modifier).  It's the client's responsibility to satisfy
 // this requirement.  Element can be an array type itself (hence
-// multi-dimensional arrays are supported).
+// multiplicar-dimensional arrays are supported).
 template <typename Element>
 class NativeArray {
  public:

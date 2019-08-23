@@ -7,9 +7,9 @@ private:
     float angulo;
 public:
     Triangulo(float xAlto, float xAncho, float xAngulo, int xColor):Geometria(xAlto,xAncho,xColor){ angulo = xAngulo; }
-    void getAngulo();
-    void getSuperficie();
-    void getPerimetro();
+    float getAngulo();
+    float getSuperficie();
+    float getPerimetro();
     void queSoy();
 };
 

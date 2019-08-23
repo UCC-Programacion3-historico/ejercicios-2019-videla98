@@ -41,16 +41,16 @@ add_executable(run_test
         U04_Colas/Ej05.cpp
         U04_Colas/Colas.cpp
 
-        U05_Hash/Ej01.cpp
-        U05_Hash/Ej02.cpp
-        U05_Hash/Ej03.cpp
-        U05_Hash/HashMap.cpp
+        U06_Hash/Ej01.cpp
+        U06_Hash/Ej02.cpp
+        U06_Hash/Ej03.cpp
+        U06_Hash/HashMap.cpp
 
-        U06_Arbol/Ej01.cpp
-        U06_Arbol/Ej02.cpp
-        U06_Arbol/Ej03.cpp
-        U06_Arbol/Ej04.cpp
-        U06_Arbol/Arbol.cpp
+        U05_Arbol/Ej01.cpp
+        U05_Arbol/Ej02.cpp
+        U05_Arbol/Ej03.cpp
+        U05_Arbol/Ej04.cpp
+        U05_Arbol/Arbol.cpp
 
         U07_Grafos/Ej01.cpp
         U07_Grafos/Ej02.cpp

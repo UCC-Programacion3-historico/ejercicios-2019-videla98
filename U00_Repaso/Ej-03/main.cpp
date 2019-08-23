@@ -12,7 +12,7 @@ int main() {
     try{
         if(b==0)
             throw 1;
-        std::cout << "\nResultado: " << miCalc.divi(a, b) << std::endl;
+        std::cout << "\nResultado: " << miCalc.dividir(a, b) << std::endl;
     }
     catch (int x){
         std::cout << "\nLa division por 0 no esta definida. ERROR: " << x;
