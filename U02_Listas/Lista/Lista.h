@@ -164,9 +164,13 @@ void Lista<T>::insertarUltimo(T dato) {
         return;
     }
 
-    while(aux->getNext() != nullptr){  //El bucle evita que aux se convierta en nulo
+    while(aux->getNext() != nullptr) //El bucle evita que aux se convierta en nulo
         aux = aux->getNext();
-    }
+
+    nuevo = new Nodo<T>;
+    nuevo->setDato(dato);
+    nuevo->setNext(nullptr);
+    aux->setNext(nuevo);
 }
 
 
@@ -262,10 +266,10 @@ void Lista<T>::vaciar() {
     while(aux != nullptr){
        auxDelete = aux;
        aux = aux->getNext();
-       delete auxDelete;
+       delete [] auxDelete;
     }
 
-    start == nullptr;
+    start = nullptr;
 }
 
 
