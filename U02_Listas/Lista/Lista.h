@@ -29,6 +29,8 @@ public:
 
     void insertarUltimo(T dato);
 
+    void concatenar(Lista);
+
     void remover(int pos);
 
     T getDato(int pos);
@@ -56,7 +58,7 @@ Lista<T>::Lista() {
  */
 template<class T>
 Lista<T>::Lista(const Lista<T> &li) {
-    //todo Implementar constructor por copia
+ //todo implementar constructor por copia
 }
 
 
@@ -145,7 +147,6 @@ void Lista<T>::insertarPrimero(T dato) {
     insertar(0, dato);
 }
 
-
 /**
  * Inserta un nodo con el dato en la ultima posicion
  * @tparam T
@@ -171,6 +172,23 @@ void Lista<T>::insertarUltimo(T dato) {
     nuevo->setDato(dato);
     nuevo->setNext(nullptr);
     aux->setNext(nuevo);
+}
+
+/**
+ * Agrega una lista al final de la lista actual
+ * @tparam T
+ * @param lis lista a concatenar al final
+ */
+template<class T>
+void Lista<T>::concatenar(Lista lis) {
+    Nodo<T> *aux = start;
+
+    while(aux->getNext() != nullptr){
+        aux = aux->getNext();
+    }
+
+    aux->setNext(lis);
+    //todo testear funcion concatenar
 }
 
 

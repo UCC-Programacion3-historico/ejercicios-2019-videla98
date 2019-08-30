@@ -15,9 +15,11 @@ int main() {
 
     std::cout << "Ingrese un nuevo elemento" << std::endl;
     std::cin >> dato;
+
     std::cout << "\nDonde deberia ingresarlo?";
     std::cout << "\n1.Primero \n2.Al medio \n3.Al final" << std::endl;
     std::cin >> x;
+
     switch(x) {
         case 1:
             lista.insertarPrimero(dato);

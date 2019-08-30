@@ -12,7 +12,6 @@ add_executable(U01-E05 Ej-05/main.cpp Ej-05/digitos.cpp)
 
 #find_package(Qt5Widgets REQUIRED)
 
-
 #set(CMAKE_MODULE_PATH "${CMAKE_SOURCE_DIR}/test/cmake_modules" ${CMAKE_MODULE_PATH})
 #find_package(SFML 2 REQUIRED graphics window system)
 
