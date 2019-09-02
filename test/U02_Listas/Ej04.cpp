@@ -11,7 +11,7 @@ TEST(U02_Ej04_test, unirDosListas) {
     for (; i < 20; i++)
         l2.insertarUltimo(i);
 
-    Lista<int> *lf = unir(l1,l2);
+    Lista<int> lf = unir(l1,l2);
 
-    EXPECT_EQ(lf->getDato(13), 13);
+    EXPECT_EQ(lf.getDato(13), 13);
 }
