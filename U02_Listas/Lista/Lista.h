@@ -15,7 +15,7 @@ private:
 public:
     Lista();
 
-    Lista(const Lista<T> &li);
+    Lista(const Lista<T>& li);
 
     ~Lista();
 
@@ -28,8 +28,6 @@ public:
     void insertarPrimero(T dato);
 
     void insertarUltimo(T dato);
-
-    void concatenar(Lista);
 
     void remover(int pos);
 
@@ -57,8 +55,30 @@ Lista<T>::Lista() {
  * @param li
  */
 template<class T>
-Lista<T>::Lista(const Lista<T> &li) {
- //todo implementar constructor por copia
+Lista<T>::Lista(const Lista<T>& li) {
+    const Nodo<T> *cpyIn = li.start;
+    Nodo<T> *nuevo, *cpyOut = nullptr;
+
+    if(cpyIn != nullptr) {
+        nuevo = new Nodo<T>;
+        cpyOut = nuevo;
+        cpyOut->setDato(cpyIn->getDato());
+        this->start = cpyOut;
+    } else {
+        this->start = nullptr;
+        return;
+    }
+
+    while(cpyIn->getNext() != nullptr) {
+        cpyIn = cpyIn->getNext();
+        nuevo = new Nodo<T>;
+        cpyOut->setNext(nuevo);
+        cpyOut = nuevo;
+        cpyOut->setDato(cpyIn->getDato());
+    }
+
+    cpyOut->setNext(nullptr);
+    //todo implementar constructor por copia
 }
 
 
@@ -175,24 +195,6 @@ void Lista<T>::insertarUltimo(T dato) {
 }
 
 /**
- * Agrega una lista al final de la lista actual
- * @tparam T
- * @param lis lista a concatenar al final
- */
-template<class T>
-void Lista<T>::concatenar(Lista lis) {
-    Nodo<T> *aux = start;
-
-    while(aux->getNext() != nullptr){
-        aux = aux->getNext();
-    }
-
-    aux->setNext(lis);
-    //todo testear funcion concatenar
-}
-
-
-/**
  * Elimina el nodo en la posicion 'pos' de la lista enlasada
  * @tparam T
  * @param pos posicion del nodo a eliminar
@@ -289,6 +291,5 @@ void Lista<T>::vaciar() {
 
     start = nullptr;
 }
-
 
 #endif //LISTA_H
