@@ -43,7 +43,14 @@ Cola<T>::Cola() {
  * @tparam T
  */
 template<class T>
-Cola<T>::~Cola() {}
+Cola<T>::~Cola() {
+    Nodo<T> *toDelete;
+    while(head != nullptr) {
+        toDelete = head;
+        head = head->getNext();
+        delete [] toDelete;
+    }
+}
 
 
 /**
@@ -101,6 +108,11 @@ bool Cola<T>::esVacia() {
     return head == nullptr;
 }
 
+/**
+ * Muestra el proximo dato en la cola
+ * @tparam T
+ * @return dato almacenado en el nodo
+ */
 template <class T>
 T Cola<T>::peek() {
     if(head == nullptr)
