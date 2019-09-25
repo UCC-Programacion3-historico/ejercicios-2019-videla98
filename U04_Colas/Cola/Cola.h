@@ -87,7 +87,7 @@ T Cola<T>::desencolar() {
         tail == nullptr;
     }
 
-    delete toDelete;
+    delete [] toDelete;
     return temp;
 }
 
