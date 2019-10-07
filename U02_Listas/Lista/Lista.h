@@ -36,6 +36,8 @@ public:
     void reemplazar(int pos, T dato);
 
     void vaciar();
+
+    void alInicio(T dato);
 };
 
 
@@ -290,6 +292,34 @@ void Lista<T>::vaciar() {
     }
 
     start = nullptr;
+}
+
+/**
+ * Busca un dato en la lista y lo coloca al inicio
+ * @param dato El dato que se quiere poner al principio
+ */
+template<class T>
+void Lista<T>::alInicio(T dato) {
+    Nodo<T> *aux = start,
+            *aMover = nullptr;
+
+    if (aux == nullptr)
+        throw 404;
+
+    if (aux->getDato() == dato)
+        return;
+
+    while (aux->getNext() != nullptr && aux->getNext()->getDato() != dato) {
+        aux = aux->getNext();
+    }
+
+    if(aux->getNext() == nullptr)
+        throw 404;
+
+    aMover = aux->getNext();
+    aux->setNext(aMover->getNext());
+    aMover->setNext(start);
+    start = aMover;
 }
 
 #endif //LISTA_H
