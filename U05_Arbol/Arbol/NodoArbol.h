@@ -1,28 +1,66 @@
-#ifndef HASHENTRY_H
-#define HASHENTRY_H
+#ifndef NODOARBOL_H
+#define NODOARBOL_H
 
 template<class T>
 class NodoArbol {
 private:
-
+    T dato;
+    NodoArbol *left, *right;
 public:
+    NodoArbol(T d);
+    NodoArbol();
+    T getDato();
+    void setDato(T d);
 
-//    void print(bool esDerecho, string identacion) {
-//        if (der != NULL) {
-//            der->print(true, identacion + (esDerecho ? "     " : "|    "));
-//        }
-//        cout << identacion;
-//        if (esDerecho) {
-//            cout << " /";
-//        } else {
-//            cout << " \\";
-//        }
-//        cout << "-- ";
-//        cout << dato << endl;
-//        if (izq != NULL) {
-//            izq->print(false, identacion + (esDerecho ? "|    " : "     "));
-//        }
-//    }
+    NodoArbol *getLeft() const;
+
+    NodoArbol *getRight() const;
+
+    void setRight(NodoArbol *right);
+
+    void setLeft(NodoArbol *left);
 };
 
-#endif //HASHENTRY_H
+template<class T>
+NodoArbol<T>::NodoArbol(T d) {
+
+}
+
+
+template<class T>
+NodoArbol<T>::NodoArbol() {
+    left = nullptr;
+    right = nullptr;
+}
+
+template<class T>
+T NodoArbol<T>::getDato() {
+    return dato;
+}
+
+template<class T>
+void NodoArbol<T>::setDato(T d) {
+    dato = d;
+}
+
+template<class T>
+NodoArbol<T>* NodoArbol<T>::getLeft() const {
+    return left;
+}
+
+template<class T>
+void NodoArbol<T>::setLeft(NodoArbol *l) {
+    left = l;
+}
+
+template<class T>
+NodoArbol<T>* NodoArbol<T>::getRight() const {
+    return right;
+}
+
+template<class T>
+void NodoArbol<T>::setRight(NodoArbol *r) {
+    right = r;
+}
+
+#endif //NODOARBOL_H

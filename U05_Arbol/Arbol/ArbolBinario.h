@@ -1,12 +1,17 @@
-#ifndef HASHMAP_H
-#define HASHMAP_H
+#ifndef ARBOLBINARIO_H
+#define ARBOLBINARIO_H
 
 #include "NodoArbol.h"
 
 template<class T>
 class ArbolBinario {
 private:
-
+    NodoArbol<T> *raiz;
+    NodoArbol<T>* put(T dato, NodoArbol<T> *r);
+    T search(T dato, NodoArbol<T> *r);
+    void preorder(NodoArbol<T> *r);
+    void inorder(NodoArbol<T> *r);
+    void postorder(NodoArbol<T> *r);
 public:
     ArbolBinario();
 
@@ -38,7 +43,7 @@ public:
  */
 template<class T>
 ArbolBinario<T>::ArbolBinario() {
-
+    raiz = nullptr;
 }
 
 
@@ -59,8 +64,26 @@ ArbolBinario<T>::~ArbolBinario() {
  */
 template<class T>
 T ArbolBinario<T>::search(T dato) {
-    T temp;
-    return temp;
+    return search(dato, raiz);
+}
+
+/**
+ *
+ * @tparam T
+ * @param dato
+ * @return
+ */
+template<class T>
+T ArbolBinario<T>::search(T dato, NodoArbol<T> *r) {
+    if (r == nullptr) {
+        throw 404;
+    }
+    if (r->getDato() == dato)
+        return r->getDato();
+    if (r->getDato() > dato)
+        return  search(dato, r->getLeft());
+    if (r->getDato() > dato)
+        return  search(dato, r->getRight());
 }
 
 
@@ -71,9 +94,31 @@ T ArbolBinario<T>::search(T dato) {
  */
 template<class T>
 void ArbolBinario<T>::put(T dato) {
-
+    raiz = put(dato, raiz);
 }
 
+/**
+ * Funcion recursiva para agregar datos al árbol
+ * @param dato
+ * @param r
+ */
+template<class T>
+NodoArbol<T>* ArbolBinario<T>::put(T dato, NodoArbol<T> *r) {
+
+    if(r == nullptr){  //si llego al final del arbol
+        return new NodoArbol<T>(dato);
+    }
+
+    if (r->getDato() == dato) {
+        throw 200; //dato duplicado
+    }
+
+    if(r->getDato() > dato)
+        r->setLeft(put(dato, r->getLeft()));
+    else
+        r->setRight(pt(dato, r->getRight()));
+    return r;
+}
 
 /**
  * Elimina un dato del árbol
@@ -91,7 +136,7 @@ void ArbolBinario<T>::remove(T dato) {
  */
 template<class T>
 bool ArbolBinario<T>::esVacio() {
-    return false;
+    return raiz == nullptr;
 }
 
 
@@ -100,27 +145,63 @@ bool ArbolBinario<T>::esVacio() {
  */
 template<class T>
 void ArbolBinario<T>::preorder() {
-
+    preorder(raiz);
 }
 
+/**
+ *
+ * @param r
+ */
+template<class T>
+void ArbolBinario<T>::preorder(NodoArbol<T> *r){
+    if(r == nullptr)
+        return;
+    std::cout << r->getDato() << " ";
+    preorder(r->getLeft());
+    preorder(r->getRight());
+}
 
 /**
  * Recorre un árbol en orden
  */
 template<class T>
 void ArbolBinario<T>::inorder() {
-
+    inorder(raiz);
 }
 
+/**
+ *
+ * @param r
+ */
+template<class T>
+void ArbolBinario<T>::inorder(NodoArbol<T> *r){
+    if(r == nullptr)
+        return;
+    inorder(r->getLeft());
+    std::cout << r->getDato() << " ";
+    inorder(r->getRight());
+}
 
 /**
  * Recorre un árbol en postorden
  */
 template<class T>
 void ArbolBinario<T>::postorder() {
-
+    postorder(raiz);
 }
 
+/**
+ *
+ * @param r
+ */
+template<class T>
+void ArbolBinario<T>::postorder(NodoArbol<T> *r){
+    if(r == nullptr)
+        return;
+    postorder(r->getLeft());
+    postorder(r->getRight());
+    std::cout << r->getDato() << " ";
+}
 
 /**
  * Muestra un árbol por consola
@@ -131,4 +212,4 @@ void ArbolBinario<T>::print() {
 }
 
 
-#endif //HASHMAP_H
+#endif //ARBOLBINARIO_H
