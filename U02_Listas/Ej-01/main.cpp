@@ -1,7 +1,6 @@
 #include <iostream>
 #include "../Lista/Lista.h"
 #include "fnInvierte.h"
-#include <conio.h>
 
 int main() {
     std::cout << "Ejercicio 02/01\n" << std::endl;
@@ -21,6 +20,5 @@ int main() {
         std::cout << lista.getDato(i) << std::endl;
     }
 
-    getch();
     return 0;
 }

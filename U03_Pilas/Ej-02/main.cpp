@@ -6,7 +6,7 @@ int main() {
 
     Pila<int> p1, p2;
     int n, dato;
-    bool b = true;
+
 
     std::cout << "Ingrese el tamaño de las pilas: ";
     std::cin >> n;
@@ -21,6 +21,8 @@ int main() {
         std::cin >> dato;
         p2.push(dato);
     }
+
+    bool b = true;
 
     while(!p1.esVacia() && b) {
         b = p1.pop() == p2.pop();

@@ -38,6 +38,8 @@ public:
     void vaciar();
 
     void alInicio(T dato);
+
+    void insertAfter2(T oldValue,unsigned int n, T newValue);
 };
 
 
@@ -80,7 +82,6 @@ Lista<T>::Lista(const Lista<T>& li) {
     }
 
     cpyOut->setNext(nullptr);
-    //todo implementar constructor por copia
 }
 
 
@@ -320,6 +321,42 @@ void Lista<T>::alInicio(T dato) {
     aux->setNext(aMover->getNext());
     aMover->setNext(start);
     start = aMover;
+}
+
+/**
+ * Ingrese un dato new luego de n repeteciones de un dato old
+ * @tparam n Cantidad de repeticiones necesarias
+ * @param oldValue Valor a buscar repetido
+ * @param newValue Valor a colocar
+ */
+template<class T>
+void Lista<T>::insertAfter2(T oldValue, unsigned int n, T newValue) {
+    Nodo<T> *look = start,
+            *nuevo = nullptr;
+    int count = 0;
+
+    if (look == nullptr)
+        throw "La lista esta vacia";
+
+    if(look->getDato() == oldValue)
+        count++;
+
+    while (look->getNext() != nullptr && count != n) {
+        look = look->getNext();
+
+        if(look->getDato() == oldValue) {
+            count++;
+        }
+    }
+
+    if(count == n) {
+        nuevo = new Nodo<T>;
+        nuevo->setDato(newValue);
+        nuevo->setNext(look->getNext());
+        look->setNext(nuevo);
+    }
+    else
+        throw "No hay Suficientes instancias oldValue (2)";
 }
 
 #endif //LISTA_H

@@ -6,7 +6,6 @@
 template <class T>
 void fnInvierte (Lista<T> *lis);
 
-
 template <class T>
 void fnInvierte (Lista<T> *lis){
     int t = lis->getTamanio();
